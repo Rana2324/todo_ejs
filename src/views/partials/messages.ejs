@@ -1,0 +1,27 @@
+<!-- Success Message -->
+<% if(messages.success && messages.success.length > 0) { %>
+<div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
+    <p><i class="fas fa-check-circle"></i> <%= messages.success %></p>
+</div>
+<% } %>
+
+<!-- Error Message -->
+<% if(messages.error && messages.error.length > 0) { %>
+<div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
+    <p><i class="fas fa-exclamation-circle"></i> <%= messages.error %></p>
+</div>
+<% } %>
+
+<!-- Info Message -->
+<% if(messages.info && messages.info.length > 0) { %>
+<div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
+    <p><i class="fas fa-info-circle"></i> <%= messages.info %></p>
+</div>
+<% } %>
+
+<!-- Warning Message -->
+<% if(messages.warning && messages.warning.length > 0) { %>
+<div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4" role="alert">
+    <p><i class="fas fa-exclamation-triangle"></i> <%= messages.warning %></p>
+</div>
+<% } %>

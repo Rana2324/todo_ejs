@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+
+<div class="max-w-2xl mx-auto text-center">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-8">
+        <div class="text-red-500 mb-4">
+            <i class="fas fa-exclamation-circle text-6xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Error</h2>
+        <p class="text-gray-600 mb-6"><%= message %></p>
+        <a href="/" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md font-medium transition-colors">
+            <i class="fas fa-home mr-2"></i> Back to Home
+        </a>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

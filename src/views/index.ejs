@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<div class="max-w-6xl mx-auto">
+    <div class="mb-6 flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-800">
+            <i class="fas fa-list-check mr-2"></i>My Todos
+        </h2>
+        <a href="/add" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            <i class="fas fa-plus mr-1"></i> Add New Todo
+        </a>
+    </div>
+
+    <div id="todos-container" class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+        <table id="todos-table" class="display responsive nowrap w-full">
+            <thead>
+                <tr>
+                    <th class="text-left">Status</th>
+                    <th class="text-left">Title</th>
+                    <th class="text-left">Description</th>
+                    <th class="text-left">Created At</th>
+                    <th class="text-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated by DataTables -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Todo Button (Mobile) -->
+    <div class="fixed bottom-20 right-4 md:hidden">
+        <a href="/add" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors">
+            <i class="fas fa-plus text-xl"></i>
+        </a>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script type="module" src="/js/index.js"></script>
+
+<%- include('./partials/footer') %>
