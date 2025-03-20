@@ -251,3 +251,69 @@
 {"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 18:33:26"}
 {"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 18:34:09"}
 {"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 18:34:09"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:44:28"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:44:28"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:45:17"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:45:17"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:47:16"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:47:16"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:47:53"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:47:53"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:05"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:05"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:09"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:09"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:10"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:10"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:13"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:13"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:15"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:15"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:17"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:17"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:20"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:20"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:23"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:23"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:25"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:25"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:30"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:30"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:33"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:33"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:35"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:35"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:36"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:36"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:48:53"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:48:53"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:03"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:03"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:07"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:07"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:18"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:18"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:20"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:20"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:25"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:25"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:29"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:29"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:30"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:30"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:35"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:35"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:40"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:40"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:42"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:42"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:46"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:46"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:49:56"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:49:56"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:50:01"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:50:01"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:50:07"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:50:07"}
+{"level":"info","message":"Connected to MongoDB at mongodb://localhost:27017/todo_app","timestamp":"2025-03-20 19:52:15"}
+{"level":"info","message":"Server running in development mode on http://localhost:5000","timestamp":"2025-03-20 19:52:15"}

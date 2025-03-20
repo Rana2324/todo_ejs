@@ -2,6 +2,7 @@ import { apiService } from './services/api.js';
 import { ui } from './utils/ui.js';
 import { showToast } from './utils/toast.js';
 
+
 // DOM elements
 const todosContainer = document.getElementById('todos-container');
 let dataTable;
@@ -26,7 +27,7 @@ const initializeDataTable = () => {
     const todosTable = document.getElementById('todos-table');
 
     if (!todosTable) {
-      logger.error('Todos table element not found');
+      console.log('Todos table element not found');
       return;
     }
 
@@ -97,9 +98,9 @@ const initializeDataTable = () => {
       order: [[3, 'desc']], // Sort by created date by default
     });
 
-    logger.info('DataTable initialized successfully');
+    console.log('DataTable initialized successfully');
   } catch (error) {
-    logger.error('Error initializing DataTable:', error);
+    console.log('Error initializing DataTable:', error);
     showToast('Failed to initialize table', 'error');
   }
 };
@@ -109,7 +110,7 @@ const initializeDataTable = () => {
  */
 const loadTodos = async () => {
   try {
-    logger.info('Loading todos...');
+    console.log('Loading todos...');
     const response = await apiService.getTodos();
 
     if (!response.success) {
@@ -118,10 +119,10 @@ const loadTodos = async () => {
 
     if (dataTable) {
       dataTable.clear().rows.add(response.data).draw();
-      logger.info('DataTable updated with todos');
+      console.log('DataTable updated with todos');
     }
   } catch (error) {
-    logger.error('Error loading todos:', error);
+    console.log('Error loading todos:', error);
     showToast(error.message, 'error');
   }
 };
@@ -171,7 +172,7 @@ const handleTodoActions = async e => {
     deleteBtn.disabled = true;
 
     try {
-      await deleteTodo(id);
+      await deleteTodo(id, deleteBtn, originalIcon);
     } catch (error) {
       // Restore original icon on error
       icon.className = originalIcon;
@@ -203,11 +204,19 @@ const toggleTodoStatus = async id => {
 /**
  * Delete a todo
  * @param {string} id - The todo ID
+ * @param {HTMLElement} button - The delete button element
+ * @param {string} originalIcon - The original icon class
  */
-const deleteTodo = async id => {
+const deleteTodo = async (id, button, originalIcon) => {
   try {
     const confirmed = await ui.showConfirmation('Are you sure you want to delete this todo?');
     if (!confirmed) {
+      // User canceled the operation, restore the button state
+      if (button) {
+        const icon = button.querySelector('i');
+        if (icon) icon.className = originalIcon;
+        button.disabled = false;
+      }
       return;
     }
 
