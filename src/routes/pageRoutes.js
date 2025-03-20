@@ -8,10 +8,10 @@ const router = express.Router();
  * Home page route
  */
 router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Home',
+    res.render('index', {
+      title: 'Home',
     todos: [], // Will be populated by client-side API call
-  });
+    });
 });
 
 /**

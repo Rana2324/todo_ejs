@@ -26,7 +26,7 @@ const initializeDataTable = () => {
     const todosTable = document.getElementById('todos-table');
 
     if (!todosTable) {
-      console.error('Todos table element not found');
+      logger.error('Todos table element not found');
       return;
     }
 
@@ -97,9 +97,9 @@ const initializeDataTable = () => {
       order: [[3, 'desc']], // Sort by created date by default
     });
 
-    console.info('DataTable initialized successfully');
+    logger.info('DataTable initialized successfully');
   } catch (error) {
-    console.error('Error initializing DataTable:', error);
+    logger.error('Error initializing DataTable:', error);
     showToast('Failed to initialize table', 'error');
   }
 };
@@ -109,7 +109,7 @@ const initializeDataTable = () => {
  */
 const loadTodos = async () => {
   try {
-    console.info('Loading todos...');
+    logger.info('Loading todos...');
     const response = await apiService.getTodos();
 
     if (!response.success) {
@@ -118,10 +118,10 @@ const loadTodos = async () => {
 
     if (dataTable) {
       dataTable.clear().rows.add(response.data).draw();
-      console.info('DataTable updated with todos');
+      logger.info('DataTable updated with todos');
     }
   } catch (error) {
-    console.error('Error loading todos:', error);
+    logger.error('Error loading todos:', error);
     showToast(error.message, 'error');
   }
 };

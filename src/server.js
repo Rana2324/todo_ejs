@@ -7,8 +7,7 @@ import dotenv from 'dotenv';
 import session from 'express-session';
 import flash from 'connect-flash';
 
-import todoRoutes from './routes/todoRoutes.js';
-import pageRoutes from './routes/pageRoutes.js';
+import  router  from './routes/index.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import { logger } from './utils/logger.js';
 
@@ -57,8 +56,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(rootDir, 'src', 'views'));
 
 // Routes
-app.use('/', pageRoutes);
-app.use('/api', todoRoutes);
+
+app.use('/', router);
 
 // Error handling
 app.use(notFoundHandler);
@@ -67,8 +66,8 @@ app.use(errorHandler);
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo_app');
-    logger.info(`Connected to MongoDB at ${process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/todo_app'}`);
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todo_app');
+    logger.info(`Connected to MongoDB at ${process.env.MONGODB_URI || 'mongodb://localhost:27017/todo_app'}`);
 
     app.listen(PORT, () => {
       logger.info(`Server running in ${process.env.NODE_ENV} mode on http://localhost:${PORT}`);
@@ -76,7 +75,7 @@ const connectDB = async () => {
     });
   } catch (error) {
     logger.error('MongoDB connection error:', error);
-    process.exit(1); 
+    logger.info('Retrying MongoDB connection in 5 seconds...');
   }
 };
 

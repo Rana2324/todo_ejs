@@ -13,6 +13,7 @@ const todoController = {
   async getAllTodos(req, res) {
     try {
       const todos = await todoService.getAllTodos();
+      console.log(todos);
       res.json({ success: true, data: todos });
     } catch (error) {
       logger.error('Error getting todos:', error);
