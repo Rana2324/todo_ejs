@@ -2,7 +2,6 @@ import { apiService } from './services/api.js';
 import { ui } from './utils/ui.js';
 import { showToast } from './utils/toast.js';
 
-
 // DOM elements
 const todosContainer = document.getElementById('todos-container');
 let dataTable;
@@ -214,6 +213,7 @@ const deleteTodo = async (id, button, originalIcon) => {
       // User canceled the operation, restore the button state
       if (button) {
         const icon = button.querySelector('i');
+        // eslint-disable-next-line curly
         if (icon) icon.className = originalIcon;
         button.disabled = false;
       }

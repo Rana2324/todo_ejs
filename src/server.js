@@ -6,6 +6,7 @@ import path from 'path';
 import dotenv from 'dotenv';
 import session from 'express-session';
 import flash from 'connect-flash';
+import cookieParser from 'cookie-parser';
 
 import  router  from './routes/index.js';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
@@ -26,6 +27,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(rootDir, 'src', 'public')));
+app.use(cookieParser()); // Add cookie parser for JWT refresh tokens
 
 // Session configuration
 app.use(session({
@@ -56,7 +58,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(rootDir, 'src', 'views'));
 
 // Routes
-
 app.use('/', router);
 
 // Error handling

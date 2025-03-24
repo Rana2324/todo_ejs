@@ -1,13 +1,19 @@
 import express from 'express';
 import todoRoutes from './todoRoutes.js';
 import pageRoutes from './pageRoutes.js';
+import authRoutes from './authRoutes.js';
+import adminRoutes from './adminRoutes.js';
 
 const router = express.Router();
 
-//api routes
+// API routes
 router.use('/api/todos', todoRoutes);
+router.use('/api/auth', authRoutes);
 
-//page routes
+// Admin routes
+router.use('/admin', adminRoutes);
+
+// Page routes
 router.use('/', pageRoutes);
 
 export default router;

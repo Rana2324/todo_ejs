@@ -12,8 +12,10 @@ const todoController = {
    */
   async getAllTodos(req, res) {
     try {
-      const todos = await todoService.getAllTodos();
-      console.log(todos);
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      const todos = await todoService.getAllTodos(req.user.id, isAdmin);
+      
       res.json({ success: true, data: todos });
     } catch (error) {
       logger.error('Error getting todos:', error);
@@ -29,7 +31,10 @@ const todoController = {
   async getTodosByStatus(req, res) {
     try {
       const { status } = req.params;
-      const todos = await todoService.getTodosByStatus(status);
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      const todos = await todoService.getTodosByStatus(status, req.user.id, isAdmin);
+      
       res.json({ success: true, data: todos });
     } catch (error) {
       logger.error('Error getting todos by status:', error);
@@ -44,7 +49,9 @@ const todoController = {
    */
   async getTodoById(req, res) {
     try {
-      const todo = await todoService.getTodoById(req.params.id);
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      const todo = await todoService.getTodoById(req.params.id, req.user.id, isAdmin);
 
       if (!todo) {
         return res.status(404).json({ success: false, error: 'Todo not found' });
@@ -53,7 +60,9 @@ const todoController = {
       res.json({ success: true, data: todo });
     } catch (error) {
       logger.error('Error getting todo:', error);
-      res.status(500).json({ success: false, error: 'Failed to get todo' });
+      // Determine appropriate status code
+      const statusCode = error.message.includes('Not authorized') ? 403 : 500;
+      res.status(statusCode).json({ success: false, error: error.message || 'Failed to get todo' });
     }
   },
 
@@ -74,11 +83,15 @@ const todoController = {
         });
       }
 
-      const todo = await todoService.createTodo({
-        title,
-        description: description || '',
-        status: status || 'pending',
-      });
+      // Pass user ID to service
+      const todo = await todoService.createTodo(
+        {
+          title,
+          description: description || '',
+          status: status || 'pending',
+        },
+        req.user.id
+      );
 
       res.status(201).json({ success: true, data: todo });
     } catch (error) {
@@ -96,8 +109,10 @@ const todoController = {
     try {
       const { id } = req.params;
       const updateData = req.body;
-
-      const todo = await todoService.updateTodo(id, updateData);
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      
+      const todo = await todoService.updateTodo(id, updateData, req.user.id, isAdmin);
 
       if (!todo) {
         return res.status(404).json({ success: false, error: 'Todo not found' });
@@ -106,7 +121,9 @@ const todoController = {
       res.json({ success: true, data: todo });
     } catch (error) {
       logger.error('Error updating todo:', error);
-      res.status(500).json({ success: false, error: 'Failed to update todo' });
+      // Determine appropriate status code
+      const statusCode = error.message.includes('Not authorized') ? 403 : 500;
+      res.status(statusCode).json({ success: false, error: error.message || 'Failed to update todo' });
     }
   },
 
@@ -118,20 +135,17 @@ const todoController = {
   async toggleTodoStatus(req, res) {
     try {
       const { id } = req.params;
-      const todo = await todoService.getTodoById(id);
-
-      if (!todo) {
-        return res.status(404).json({ success: false, error: 'Todo not found' });
-      }
-
-      // Toggle the status
-      const newStatus = todo.status === 'completed' ? 'pending' : 'completed';
-      const updatedTodo = await todoService.updateTodo(id, { status: newStatus });
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      
+      const updatedTodo = await todoService.toggleTodoStatus(id, req.user.id, isAdmin);
 
       res.json({ success: true, data: updatedTodo });
     } catch (error) {
       logger.error('Error toggling todo status:', error);
-      res.status(500).json({ success: false, error: 'Failed to toggle todo status' });
+      // Determine appropriate status code
+      const statusCode = error.message.includes('Not authorized') ? 403 : 500;
+      res.status(statusCode).json({ success: false, error: error.message || 'Failed to toggle todo status' });
     }
   },
 
@@ -143,7 +157,10 @@ const todoController = {
   async deleteTodo(req, res) {
     try {
       const { id } = req.params;
-      const todo = await todoService.deleteTodo(id);
+      // Pass user ID and admin status to service
+      const isAdmin = req.user.role === 'admin';
+      
+      const todo = await todoService.deleteTodo(id, req.user.id, isAdmin);
 
       if (!todo) {
         return res.status(404).json({ success: false, error: 'Todo not found' });
@@ -152,7 +169,9 @@ const todoController = {
       res.json({ success: true, data: todo });
     } catch (error) {
       logger.error('Error deleting todo:', error);
-      res.status(500).json({ success: false, error: 'Failed to delete todo' });
+      // Determine appropriate status code
+      const statusCode = error.message.includes('Not authorized') ? 403 : 500;
+      res.status(statusCode).json({ success: false, error: error.message || 'Failed to delete todo' });
     }
   },
 };

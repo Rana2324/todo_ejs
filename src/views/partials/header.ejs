@@ -24,6 +24,8 @@
     <!-- Utility Scripts -->
     <script type="module" src="/js/utils/ui.js"></script>
     <script type="module" src="/js/utils/toast.js"></script>
+    <!-- Auth UI Script -->
+    <script type="module" src="/js/auth/authUI.js"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
     <header class="bg-blue-600 text-white shadow-md">
@@ -33,9 +35,41 @@
                     <a href="/" class="hover:text-blue-200 transition-colors"><i class="fas fa-check-double mr-2"></i>Todo App</a>
                 </h1>
                 <nav>
-                    <ul class="flex space-x-4">
+                    <ul class="flex space-x-4 items-center">
                         <li><a href="/" class="hover:text-blue-200 transition-colors font-medium"><i class="fas fa-home mr-1"></i> Home</a></li>
                         <li><a href="/add" class="hover:text-blue-200 transition-colors font-medium"><i class="fas fa-plus mr-1"></i> Add Todo</a></li>
+                        
+                        <!-- Auth Section - Will be controlled by JavaScript -->
+                        <li id="auth-section" class="ml-4">
+                            <!-- For unauthenticated users -->
+                            <div id="guest-nav" class="flex space-x-2">
+                                <a href="/login" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
+                                    <i class="fas fa-sign-in-alt mr-1"></i> Login
+                                </a>
+                                <a href="/register" class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-md">
+                                    <i class="fas fa-user-plus mr-1"></i> Register
+                                </a>
+                            </div>
+                            
+                            <!-- For authenticated users -->
+                            <div id="user-nav" class="hidden relative">
+                                <button id="user-menu-button" class="flex items-center hover:text-blue-200 transition-colors">
+                                    <i class="fas fa-user-circle mr-1"></i>
+                                    <span id="username-display"></span>
+                                    <i class="fas fa-chevron-down ml-1"></i>
+                                </button>
+                                <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-10">
+                                    <div class="py-1">
+                                        <a id="admin-link" href="/admin" class="hidden block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                                            <i class="fas fa-cog mr-1"></i> Admin Panel
+                                        </a>
+                                        <a href="#" id="logout-button" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">
+                                            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -1,7 +1,11 @@
 import express from 'express';
 import todoController from '../controllers/todoController.js';
+import { authMiddleware, roleMiddleware } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
+
+// All routes require authentication
+router.use(authMiddleware);
 
 // GET all todos
 router.get('/', todoController.getAllTodos);
@@ -26,4 +30,3 @@ router.get('/:id', todoController.getTodoById);
 router.post('/', todoController.createTodo);
 
 export default router;
-//
